@@ -22,7 +22,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "electron": "electron .",
-    "dev": "concurrently \"npm start\" \"wait-on http://localhost:3000 && npm run electron\""
+    "dev": "concurrently \"npm start\" \"wait-on http://localhost:3000 && npm run electron\"",
+    "package": "electron-builder --dir",
+    "dist": "electron-builder --win --mac"
   },
   "eslintConfig": {
     "extends": [
@@ -46,45 +48,34 @@
     "autoprefixer": "^10.4.21",
     "concurrently": "^9.1.2",
     "cross-env": "^7.0.3",
+    "electron-builder": "^26.0.12",
     "wait-on": "^8.0.3"
   },
   "build": {
-    "appId": "com.instagram-embed-app.about",
-    "copyright": "",
-    "publish": {
-      "provider": "github",
-      "private": false,
-      "owner": "Vignesh Bharathi"
-    },
-    "mac": {
-      "publish": {
-        "provider": "github",
-        "owner": "Vignesh Bharathi",
-        "repo": "Repository Name",
-        "private": false,
-        "token": ""
-      }
-    },
-    "win": {
-      "publish": {
-        "provider": "github",
-        "owner": "Vignesh Bharathi",
-        "repo": "Repository Name",
-        "private": false,
-        "token": ""
-      },
-      "publisherName": "infinijith"
-    },
-    "linux": {
-      "category": "Utility"
-    },
+    "appId": "com.electron-instagram-embeded-app.about",
+    "productName": "Instagram Profile Viewer",
+    "copyright": "Copyright © Vignesh Bharathi",
     "files": [
       "build/**/*",
-      "node_modules/**/*"
+      "main.js",
+      "node_modules/**/*",
+      "package.json"
     ],
+    "directories": {
+      "buildResources": "assets"
+    },
+    "mac": {
+      "target": "dmg",
+      "icon": "assets/icon.icns"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "assets/icon.ico"
+    },
     "nsis": {
-      "installerIcon": "build/icon.ico",
-      "installerHeaderIcon": "build/icon.ico",
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
       "deleteAppDataOnUninstall": true
     }
   }
