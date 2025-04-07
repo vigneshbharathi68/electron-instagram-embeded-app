@@ -1,0 +1,84 @@
+.container {
+  max-width: 64rem; /* same as max-w-4xl */
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.profile {
+  margin-bottom: 2rem;
+  text-align: center;
+  display: flex;
+  gap: 2rem;
+}
+
+.profile-image {
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.profile-image img {
+  width: 100%;
+  height: 100%;
+}
+
+.profile h1 {
+  font-size: 1.875rem; /* text-3xl */
+  font-weight: bold;
+  text-align: left;
+}
+
+.profile p {
+  color: #efefef;
+  text-transform: capitalize;
+  text-align: left;
+}
+
+.grid-container {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+  text-align: left;
+}
+
+@media (min-width: 640px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr); /* sm:grid-cols-2 */
+  }
+}
+
+@media (min-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(3, 1fr); /* md:grid-cols-3 */
+  }
+}
+
+.card {
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.card img,
+.card video {
+  width: 100%;
+  height: 16rem;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 0.5rem;
+}
+
+.card-content p {
+  font-size: 0.875rem;
+  color: #efefef; /* text-gray-700 */
+}
+
+.card-content a {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  color: #3b82f6; /* text-blue-500 */
+  text-decoration: none;
+}

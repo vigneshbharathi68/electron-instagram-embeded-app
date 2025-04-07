@@ -1,0 +1,91 @@
+{
+  "name": "instagram-embed-app",
+  "version": "0.1.0",
+  "private": true,
+  "main": "public/main.js",
+  "homepage": "./",
+  "dependencies": {
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^13.5.0",
+    "dotenv": "^16.4.7",
+    "electron": "^35.1.4",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "cross-env BROWSER=none react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "electron": "electron .",
+    "dev": "concurrently \"npm start\" \"wait-on http://localhost:3000 && npm run electron\""
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "concurrently": "^9.1.2",
+    "cross-env": "^7.0.3",
+    "wait-on": "^8.0.3"
+  },
+  "build": {
+    "appId": "com.instagram-embed-app.about",
+    "copyright": "",
+    "publish": {
+      "provider": "github",
+      "private": false,
+      "owner": "Vignesh Bharathi"
+    },
+    "mac": {
+      "publish": {
+        "provider": "github",
+        "owner": "Vignesh Bharathi",
+        "repo": "Repository Name",
+        "private": false,
+        "token": ""
+      }
+    },
+    "win": {
+      "publish": {
+        "provider": "github",
+        "owner": "Vignesh Bharathi",
+        "repo": "Repository Name",
+        "private": false,
+        "token": ""
+      },
+      "publisherName": "infinijith"
+    },
+    "linux": {
+      "category": "Utility"
+    },
+    "files": [
+      "build/**/*",
+      "node_modules/**/*"
+    ],
+    "nsis": {
+      "installerIcon": "build/icon.ico",
+      "installerHeaderIcon": "build/icon.ico",
+      "deleteAppDataOnUninstall": true
+    }
+  }
+}
