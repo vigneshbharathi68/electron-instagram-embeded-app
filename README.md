@@ -43,7 +43,8 @@ npm run dev
 
 4. **Build the App for Production:**
 ```bash
-npm run package
+npm run build-win (for windows)
+npm run build-mac (for mac)
 ```
 
 ---
